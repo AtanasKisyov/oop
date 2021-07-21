@@ -3,10 +3,10 @@ from abc import ABC, abstractmethod
 
 class Animal(ABC):
 
-    def __init__(self, name, weight):
+    def __init__(self, name, weight, food_eaten=0):
         self.name = name
         self.weight = weight
-        self.food_eaten = 0
+        self.food_eaten = food_eaten
 
 
 class Bird(Animal):
