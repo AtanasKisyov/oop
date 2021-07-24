@@ -3,28 +3,26 @@ from abc import ABC, abstractmethod
 
 class Animal(ABC):
 
+    allowed_food = None
+    gained_weight = None
+
     def __init__(self, name, weight, food_eaten=0):
         self.name = name
         self.weight = weight
         self.food_eaten = food_eaten
 
-
-class Bird(Animal):
-
-    def __init__(self, name, weight, wing_size):
-        super().__init__(name, weight)
-        self.wing_size = wing_size
-
     @abstractmethod
     def make_sound(self):
         pass
 
-    @abstractmethod
     def feed(self, food):
-        pass
+        if type(food) not in self.allowed_food:
+            return f"{type(self).__name__} does not eat {type(food).__name__}!"
+        self.weight += food.quantity * self.gained_weight
+        self.food_eaten += food.quantity
 
 
-class Mammal(Animal):
+class Mammal(Animal, ABC):
 
     def __init__(self, name, weight, living_region):
         super().__init__(name, weight)
@@ -34,6 +32,19 @@ class Mammal(Animal):
     def make_sound(self):
         pass
 
+    def __repr__(self):
+        return f"{type(self).__name__} [{self.name}, {self.weight}, {self.living_region}, {self.food_eaten}]"
+
+
+class Bird(Animal, ABC):
+
+    def __init__(self, name, weight, wing_size):
+        super().__init__(name, weight)
+        self.wing_size = wing_size
+
     @abstractmethod
-    def feed(self, food):
+    def make_sound(self):
         pass
+
+    def __repr__(self):
+        return f"{type(self).__name__} [{self.name}, {self.wing_size}, {self.weight}, {self.food_eaten}]"
