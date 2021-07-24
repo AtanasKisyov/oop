@@ -1,5 +1,5 @@
-from project.animals.birds import Owl, Hen
-from project.food import Meat, Vegetable, Fruit
+from wild_farm.animals.birds import Owl, Hen
+from wild_farm.food import Meat, Vegetable, Fruit
 
 owl = Owl("Pip", 10, 10)
 print(owl)
