@@ -12,7 +12,7 @@ def add_ten(number):
     return number + 10
 
 
-print(add_ten(3))
+print(add_ten(5))
 
 
 @multiply(5)
