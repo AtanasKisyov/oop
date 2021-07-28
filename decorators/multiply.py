@@ -7,7 +7,7 @@ def multiply(times):
     return decorator
 
 
-@multiply(3)
+@multiply(10)
 def add_ten(number):
     return number + 10
 
