@@ -8,7 +8,7 @@ class Hotel:
     @staticmethod
     def find_room(room, rooms):
         for r in rooms:
-            if r.number == room:
+            if r.n == room:
                 return r
         return False
 
@@ -34,8 +34,8 @@ class Hotel:
             self.rooms[room_index].free_room()
 
     def status(self):
-        free_rooms = [str(r.number) for r in self.rooms if not r.is_taken]
-        taken_rooms = [str(r.number) for r in self.rooms if r.is_taken]
+        free_rooms = [str(r.n) for r in self.rooms if not r.is_taken]
+        taken_rooms = [str(r.n) for r in self.rooms if r.is_taken]
         return f"Hotel {self.name} has {self.guests} total guests\n" \
                f"Free rooms: {', '.join(free_rooms)}\n" \
                f"Taken rooms: {', '.join(taken_rooms)}"

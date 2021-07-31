@@ -9,7 +9,7 @@ class Tests(unittest.TestCase):
         self.hotel = Hotel("Some Hotel")
 
     def test_init_creates_all_attributes(self):
-        self.assertEqual(self.room.number, 1)
+        self.assertEqual(self.room.n, 1)
         self.assertEqual(self.room.capacity, 3)
         self.assertEqual(self.room.guests, 0)
         self.assertEqual(self.room.is_taken, False)
