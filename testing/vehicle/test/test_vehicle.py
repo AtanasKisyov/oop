@@ -41,7 +41,7 @@ class TestVehicle(TestCase):
         self.assertTrue(isinstance(self.car.fuel, float))
         self.assertTrue(isinstance(self.car.capacity, float))
         self.assertTrue(isinstance(self.car.horse_power, float))
-        self.assertEqual(isinstance(self.car.fuel_consumption, float))
+        self.assertTrue(isinstance(self.car.fuel_consumption, float))
 
 
 if __name__ == "__main__":
